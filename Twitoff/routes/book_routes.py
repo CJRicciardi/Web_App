@@ -23,3 +23,8 @@ def books():
         {"id": 3, "title": "Book 3"},
     ]  # todo: get from the database
     return render_template("books.html", books=books)
+
+@book_routes.route("/books/new")
+def new_books():
+    print('visited the new books page')
+    return render_template("new_book.html")
