@@ -12,4 +12,4 @@ def hello():
 @home_routes.route("/about")
 def about():
     print('visited the about page')
-    return "About me"
+    return "About me."
