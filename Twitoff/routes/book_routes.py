@@ -1,6 +1,6 @@
 # Web_App/Twitoff/routes/book_routes.py
 
-from flask import Blueprint, jsonify, render_template
+from flask import Blueprint, jsonify, render_template, request
 
 book_routes = Blueprint("book_routes", __name__)
 
@@ -28,3 +28,14 @@ def books():
 def new_books():
     print('visited the new books page')
     return render_template("new_book.html")
+
+@book_routes.route("/books/create", methods=["post"])
+def create_book():
+    print('Form Data:', dict(request.form))
+    #todo: store in database
+    return jsonify({
+        "message": "Book created ok (TODO)",
+        "book": dict(request.form)
+    })
+    #flash(f"Book '{new_book.title}' created successfully!", "success")
+    #return redirect(f"/books")

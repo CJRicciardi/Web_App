@@ -13,5 +13,20 @@
 
     <p>Hello, please use the below form to create a new book.</p>
 
+    <form action="/books/create" method="post">
+    
+        <label>Title:</label>
+        <input type="text" name"title" placeholder="Book XYZ">
+
+        <label>Author:</label>
+        <select name="author_name">
+            <option value="A1">Author 1</option>
+            <option value="A2">Author 2</option>
+            <option value="A3">Author 3</option>
+        </select>
+
+        <button>Submit</button>
+    </form>
+
 </body>
 </html>
