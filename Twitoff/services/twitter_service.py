@@ -7,9 +7,9 @@ from pprint import pprint
 
 load_dotenv()
 
+# twitter access hidden in env
 consumer_key = os.getenv("TWITTER_API_KEY", default="OOPS")
 consumer_secret = os.getenv("TWITTER_API_SECRET", default="OOPS")
-
 access_token = os.getenv("TWITTER_ACCESS_TOKEN", default="OOPS")
 access_token_secret = os.getenv("TWITTER_ACCESS_TOKEN_SECRET", default="OOPS")
 
