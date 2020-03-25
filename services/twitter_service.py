@@ -3,6 +3,7 @@
 import os
 from dotenv import load_dotenv
 import tweepy
+from pprint import pprint
 
 load_dotenv()
 
@@ -17,8 +18,20 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
+print("API", type(auth))
 
-public_tweets = api.home_timeline()
+# breakpoint()
+# public_tweets = api.home_timeline()
+# for tweet in public_tweets:
+#     print(tweet.text)
 
-for tweet in public_tweets:
-    print(tweet.text)
+# get info on user
+screen_name="elonmusk"
+user = api.get_user(screen_name)
+print(type(user))  # class 'tweepy.models.User
+print(user.screen_name)
+print(user.followers_count)
+pprint(user._json)
+
+# get users tweets:
+statuses = api.user_timeline(screen_name, tweetmode="extended", count=100, exclude_replies=True, include_rts=False )
